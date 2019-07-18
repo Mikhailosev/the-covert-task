@@ -4,6 +4,9 @@ import { Switch, Route } from "react-router-dom";
 import IndexMain from "./containers/IndexMain/IndexMain";
 
 class App extends Component {
+  componentDidMount(){
+    document.title = "The-covert Task"
+  }
   render() {
     return (
       <div>

@@ -16,7 +16,7 @@ class UsersInfo extends Component {
           overflowX: "hidden",
           marginRight: "5px",
         }}
-      >
+      > <p className="title">Users</p>
         <UserInfoComponent />
       </div>
     );
