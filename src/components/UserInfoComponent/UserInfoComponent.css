@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex-element {
+    flex: 1 100%;
+    display: flex;
+}
+
+.flexUserPhoto {
+    flex-flow: row wrap;
+
+}
+
+.flexTextBox {
+    flex-flow: row wrap;
+margin:5px;
+}
