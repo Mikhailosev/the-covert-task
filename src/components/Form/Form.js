@@ -62,7 +62,56 @@ class Form extends Component {
 
   commentHandler = event => {
     event.preventDefault();
-    this.setState({ loading: true });
+    this.setState({
+        commentForm: {
+          title: {
+            elementType: "input",
+            elementConfig: {
+              type: "text",
+              placeholder: "Choose A title",
+            },
+            value: "",
+            validation: {
+              required: true,
+              minLength: 5,
+              maxLength: 80,
+            },
+            valid: false,
+            touched: false,
+          },
+          text: {
+            elementType: "textarea",
+            elementConfig: {
+              type: "text",
+              placeholder: "Fill this with the comment text",
+            },
+            value: "",
+            validation: {
+              required: true,
+              minLength:1,
+              maxLength: 128,
+            },
+            valid: false,
+            touched: false,
+          },
+          telephoneNumber: {
+            elementType: "input",
+            elementConfig: {
+              type: "text",
+              placeholder: "Enter your phone number here",
+            },
+            value: "",
+            validation: {
+              required: true,
+              regex: true,
+            },
+            valid: false,
+            touched: false,
+          },
+        },
+        formIsValid: false,
+        loading: false,
+      });
     const formData = {};
     for (let formElementIdentifier in this.state.commentForm) {
       formData[formElementIdentifier] = this.state.commentForm[
@@ -84,54 +133,7 @@ class Form extends Component {
         })
       })
       .catch(error => {
-        this.setState({ commentForm: {
-            title: {
-              elementType: "input",
-              elementConfig: {
-                type: "text",
-                placeholder: "Choose A title",
-              },
-              value: "",
-              validation: {
-                required: true,
-                minLength: 5,
-                maxLength: 80,
-              },
-              valid: false,
-              touched: false,
-            },
-            text: {
-              elementType: "textarea",
-              elementConfig: {
-                type: "text",
-                placeholder: "Fill this with the comment text",
-              },
-              value: "",
-              validation: {
-                required: true,
-                minLength:1,
-                maxLength: 128,
-              },
-              valid: false,
-              touched: false,
-            },
-            telephoneNumber: {
-              elementType: "input",
-              elementConfig: {
-                type: "text",
-                placeholder: "Enter your phone number here",
-              },
-              value: "",
-              validation: {
-                required: true,
-                regex: true,
-              },
-              valid: false,
-              touched: false,
-            },
-          },
-          formIsValid: false,
-          loading: false,});
+        this.setState({ loading: false });
       });
      
   };
