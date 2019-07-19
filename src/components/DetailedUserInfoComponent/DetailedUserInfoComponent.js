@@ -17,6 +17,7 @@ class DetailedUserInfoComponent extends Component {
   render() {
     return (
       <div>
+        {/* Getting stored user displayed */}
         {this.props.storedUser ? (
           <article key={this.props.storedUser.id} className="media">
             <figure className="media-left">

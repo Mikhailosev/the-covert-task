@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-     
+    {/* Route for displaying the Layout */}
           <Route path="/" component={IndexMain} />
       </div>
     );

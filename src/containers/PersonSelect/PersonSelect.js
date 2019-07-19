@@ -22,6 +22,7 @@ class PersonSelect extends Component {
     return (
       <header className="card-content nav">
         {this.props.storedUsers
+        // Displaying all the users avatars
           ? this.props.storedUsers.map(user => (
               <Link key={user.id}to={"/user/" + user.id}>
                 <img

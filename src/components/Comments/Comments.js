@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from "../../store/actions/index";
 class Comments extends Component {
   render() {
+      //Getting comments that we need
     let comments = [];
 
     if (this.props.storedComments) {
@@ -19,6 +20,7 @@ class Comments extends Component {
     return (
       <div>
         <h1 className="title">Comments:</h1>
+        {/* Displaying the comments */}
         {this.props.storedComments
           ? comments.map(comment => {
               return (

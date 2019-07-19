@@ -8,6 +8,7 @@ class UserInfoComponent extends Component {
   render() {
     return (
       <div>
+        {/* Displaying all the users */}
         {this.props.storedUsers
           ? this.props.storedUsers.map(user => (
               <Link

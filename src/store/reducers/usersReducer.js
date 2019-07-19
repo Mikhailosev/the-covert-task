@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   comments: null,
 };
+// Reducer cases
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_USERS:

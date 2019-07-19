@@ -8,6 +8,7 @@ class Index extends Component {
   componentDidMount() {}
   render() {
     return (
+      // Root component that i use in my Route
       <div>
         <PersonSelect />
 

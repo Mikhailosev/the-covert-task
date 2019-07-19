@@ -59,9 +59,21 @@ class Form extends Component {
   componentDidMount() {
     console.log('"' + window.location.pathname + '"');
   }
-
+//Getting data from the elements and posting it
   commentHandler = event => {
     event.preventDefault();
+    const formData = {};
+    for (let formElementIdentifier in this.state.commentForm) {
+      formData[formElementIdentifier] = this.state.commentForm[
+        formElementIdentifier
+      ].value;
+    }
+    const comment = {
+      commentPage: this.props.user.id,
+      commentData: formData,
+    }
+        //Cleaning up a state for component to rerender clean
+
     this.setState({
         commentForm: {
           title: {
@@ -112,16 +124,6 @@ class Form extends Component {
         formIsValid: false,
         loading: false,
       });
-    const formData = {};
-    for (let formElementIdentifier in this.state.commentForm) {
-      formData[formElementIdentifier] = this.state.commentForm[
-        formElementIdentifier
-      ].value;
-    }
-    const comment = {
-      commentPage: this.props.user.id,
-      commentData: formData,
-    };
     axios
       .post("/comments.json", comment)
       .then(response => {
@@ -137,7 +139,7 @@ class Form extends Component {
       });
      
   };
-
+//Checking if Validity rules exist for a certain field and if yes, check for them
   checkValidity(value, rules) {
     let isValid = true;
 
@@ -160,9 +162,8 @@ class Form extends Component {
 
     return isValid;
   }
-  cleanInput=(event)=>{  
-  }
-
+//Handling changes in input and displaying it if they occure
+//Also applying classes tp my custom UI elements if needed
   inputChangedHandler = (event, inputIdentifier) => {
     const updatedCommentForm = {
       ...this.state.commentForm,

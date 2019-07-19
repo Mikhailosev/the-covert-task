@@ -1,5 +1,6 @@
 import axios from "../../axios-instance";
 import * as actionTypes from "./actionTypes";
+// Reducer functions
 export const get_usersf = res => {
   return {
     type: actionTypes.GET_USERS,

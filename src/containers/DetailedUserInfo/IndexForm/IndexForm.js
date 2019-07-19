@@ -17,6 +17,7 @@ class Index extends Component {
   render() {
     return (
       <div>
+          {/* Root Container that i use in my Route */}
         <DetailedUserInfoComponent userId={this.props.match.params.userId} />
         <Comments />
         <Form
